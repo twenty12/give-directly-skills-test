@@ -1,6 +1,7 @@
-from api.models import Book, User, Request
 from flask_restful import reqparse, Resource
 from flask import jsonify
+
+from api.models import Book, User, Request
 from api import db
 
 parser = reqparse.RequestParser()

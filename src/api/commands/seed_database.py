@@ -1,4 +1,5 @@
 from flask_script import Command
+
 from api import db
 from api.models import Book, User
 
@@ -11,8 +12,13 @@ class SeedDB(Command):
         db.session.commit()
 
     def add_user(self):
-        user = User(email='elon@spacex.com')
-        db.session.add(user)
+        email = 'elon@spacex.com'
+        exists = db.session.query(User.id).filter_by(
+            email=email).scalar() is not None
+        if not exists:
+            print('Adding the user {} to DB.'.format(email))
+            user = User(email=email)
+            db.session.add(user)
 
     def add_books(self):
         book_titles = [
@@ -21,5 +27,9 @@ class SeedDB(Command):
             'The New Jim Crow'
         ]
         for title in book_titles:
-            new_book = Book(title=title)
-            db.session.add(new_book)
+            exists = db.session.query(Book.id).filter_by(
+                title=title).scalar() is not None
+            if not exists:
+                print('Adding the book {} to DB.'.format(title))
+                new_book = Book(title=title)
+                db.session.add(new_book)
