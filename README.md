@@ -27,11 +27,13 @@ I could have made the app such that any email address could request a book, but 
 
 # TO DO (if time allowed)
 
-There were a number of things I would have liked to done had I not already used the allotted 3 hours.
+There were a number of things I would have liked to have done had I not already used the allotted 3 hours.
 
 - Add more sophisticated email validation
 - Add a create user endpoint
-- Write tests such that they don't use the endpoints to do the data setup and cleanup
+- Write tests such that they don't use the endpoints to do the data setup and cleanup. 
+- Write tests that check the entries are in the database
+- Write tests using mock data which is torn down after each run
 - Consolidate migrations
 
 # My Steps
