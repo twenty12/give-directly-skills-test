@@ -32,6 +32,7 @@ There were a number of things I would have liked to done had I not already used 
 - Add more sophisticated email validation
 - Add a create user endpoint
 - Write tests such that they don't use the endpoints to do the data setup and cleanup
+- Consolidate migrations
 
 # My Steps
 

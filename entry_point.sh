@@ -7,6 +7,7 @@ echo "Running Migrations"
 python manage.py db upgrade
 
 echo "Seeding DB"
+
 python manage.py seed_db
 
 echo "Starting App"
