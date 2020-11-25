@@ -9,7 +9,9 @@ class TestIntegration:
             'email': 'elon@spacex.com',
             'title': 'The New Jim Crow'
         }
-        self.book_id = requests.post(BASE_URL + '/request', data=payload).json()['id']
+        self.book_id = requests.post(
+            BASE_URL + '/request',
+            data=payload).json()['id']
 
     def remove_request(self):
         url = '{}/request/{}'.format(
@@ -73,8 +75,7 @@ class TestIntegration:
         response = requests.post(BASE_URL + '/request', data=payload)
         data = response.json()
         assert not data['available']
-        
-        # Cleanup
+
         url = '{}/request/{}'.format(
             BASE_URL,
             data['id']

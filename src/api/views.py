@@ -10,13 +10,12 @@ parser.add_argument('title')
 
 
 class RequestView(Resource):
+
     def get(self, book_id=None):
         if not book_id:
             return self._get_all_requests(book_id)
 
         return self._get_request(book_id)
-
-
 
     def post(self, book_id=None):
         args = parser.parse_args()
