@@ -26,7 +26,6 @@ class Book(db.Model):
 
 class Request(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    active = db.Column(db.Boolean)
     timestamp = db.Column(
         db.DateTime,
         nullable=False,

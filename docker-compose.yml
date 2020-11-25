@@ -17,6 +17,7 @@ services:
       - .:/code
     environment: 
       - FLASK_APP=api
+      - FLASK_DEBUG=1
     ports:
       - 5000:5000
     depends_on:
